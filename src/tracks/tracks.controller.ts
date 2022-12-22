@@ -1,9 +1,12 @@
 import { Controller } from '@nestjs/common';
+import { TracksService } from './tracks.service';
 
 @Controller('tracks')
 export class TracksController {
-  @Get()
+  constructor(private tracksService: TracksService) {}
+
+  @Get('tracks')
   getAll() {
-    return 'All tracks';
+    return this.tracksService.getAll();
   }
 }
