@@ -14,4 +14,12 @@ export class TracksService {
     const id = Date.now().toString();
     return id;
   }
+
+  updateTrack() {
+    return 'Track updated';
+  }
+
+  deleteTrack() {
+    return 'Track deleted';
+  }
 }
