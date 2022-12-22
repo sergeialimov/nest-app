@@ -7,6 +7,8 @@ import {
   Post,
   Redirect,
   Put,
+  Param,
+  Query,
 } from '@nestjs/common';
 import { TracksService } from './tracks.service';
 
@@ -20,10 +22,24 @@ export class TracksController {
     return this.tracksService.getAll();
   }
 
-  @Get('one')
+  // path params
+  @Get('one1/:id')
   @HttpCode(200)
-  getOne() {
-    return this.tracksService.getAll()[0];
+  getOneQuery1(@Param('id') id) {
+    return this.tracksService.getOne(id);
+  }
+
+  // query params
+  @Get('one2')
+  @HttpCode(200)
+  getOneQuery2(@Query('id') id) {
+    return this.tracksService.getOne(id);
+  }
+
+  @Get('one3')
+  @HttpCode(200)
+  getOneQuery3(@Query() query) {
+    return this.tracksService.getOne(query.id);
   }
 
   @Put('create')
