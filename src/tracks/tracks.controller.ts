@@ -1,4 +1,13 @@
-import { Controller, Delete, Get, HttpCode, Patch, Post } from '@nestjs/common';
+import {
+  Controller,
+  Delete,
+  Get,
+  HttpCode,
+  Patch,
+  Post,
+  Redirect,
+  Put,
+} from '@nestjs/common';
 import { TracksService } from './tracks.service';
 
 @Controller('tracks')
@@ -33,5 +42,11 @@ export class TracksController {
   @HttpCode(204) // 204 No Content
   delete() {
     return this.tracksService.deleteTrack();
+  }
+
+  @Get('all-old')
+  @Redirect('all', 301)
+  getAllOld() {
+    return this.tracksService.getAll(); // This will never be called
   }
 }
