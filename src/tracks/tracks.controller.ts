@@ -1,4 +1,4 @@
-import { Controller, Get, HttpCode, Patch, Post } from '@nestjs/common';
+import { Controller, Delete, Get, HttpCode, Patch, Post } from '@nestjs/common';
 import { TracksService } from './tracks.service';
 
 @Controller('tracks')
@@ -17,7 +17,7 @@ export class TracksController {
     return this.tracksService.getAll()[0];
   }
 
-  @Post('create')
+  @Put('create')
   @HttpCode(201) // 201 Created
   create() {
     return this.tracksService.createTrack();
@@ -29,7 +29,7 @@ export class TracksController {
     return this.tracksService.updateTrack();
   }
 
-  @Post('delete')
+  @Delete('delete')
   @HttpCode(204) // 204 No Content
   delete() {
     return this.tracksService.deleteTrack();
