@@ -1,12 +1,17 @@
-import { Controller } from '@nestjs/common';
+import { Controller, Get, Post } from '@nestjs/common';
 import { TracksService } from './tracks.service';
 
 @Controller('tracks')
 export class TracksController {
   constructor(private tracksService: TracksService) {}
 
-  @Get('tracks')
+  @Get('all')
   getAll() {
     return this.tracksService.getAll();
+  }
+
+  @Post('create')
+  create() {
+    return this.tracksService.createTrack();
   }
 }

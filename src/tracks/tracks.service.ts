@@ -9,4 +9,9 @@ export class TracksService {
       { id: 3, name: 'Track 3' },
     ];
   }
+
+  createTrack() {
+    const id = Date.now().toString();
+    return id;
+  }
 }
