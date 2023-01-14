@@ -47,16 +47,16 @@ export class TracksController {
     return this.tracksService.createTrack(query.name);
   }
 
-  @Patch('update')
+  @Patch('update-name')
   @HttpCode(202) // 202 Accepted
-  update() {
-    return this.tracksService.updateTrack();
+  update(@Query() query) {
+    return this.tracksService.updateTrack(query.id, query.name);
   }
 
   @Delete('delete')
   @HttpCode(204) // 204 No Content
-  delete() {
-    return this.tracksService.deleteTrack();
+  delete(@Query('id') id: number) {
+    return this.tracksService.deleteTrack(id);
   }
 
   @Get('all-old')
