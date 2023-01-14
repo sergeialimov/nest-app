@@ -1,7 +1,7 @@
 const tracks = [
-  { id: 1, name: 'Track 1' },
-  { id: 2, name: 'Track 2' },
-  { id: 3, name: 'Track 3' },
+  { id: 1, name: 'Track 1', hidden: false },
+  { id: 2, name: 'Track 2', hidden: false },
+  { id: 3, name: 'Track 3', hidden: false },
 ];
 
 export class TracksService {
