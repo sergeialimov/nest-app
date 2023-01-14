@@ -59,9 +59,9 @@ export class TracksController {
     return this.tracksService.deleteTrack(+id);
   }
 
-  @Get('all-old')
+  @Get('all-redirect')
   @Redirect('all', 301)
   getAllOld() {
-    return this.tracksService.getAll(); // This will never be called
+    return null; // This will never be called
   }
 }
