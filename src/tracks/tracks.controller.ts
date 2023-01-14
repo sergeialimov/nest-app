@@ -25,20 +25,20 @@ export class TracksController {
   @Get('one/:id')
   @HttpCode(200)
   getOneQuery1(@Param('id') id) {
-    return this.tracksService.getOne(id);
+    return this.tracksService.getOne(+id);
   }
 
   // query params
   @Get('one2')
   @HttpCode(200)
   getOneQuery2(@Query('id') id) {
-    return this.tracksService.getOne(id);
+    return this.tracksService.getOne(+id);
   }
 
   @Get('one3')
   @HttpCode(200)
   getOneQuery3(@Query() query) {
-    return this.tracksService.getOne(query.id);
+    return this.tracksService.getOne(+query.id);
   }
 
   @Put('create')
@@ -50,13 +50,13 @@ export class TracksController {
   @Patch('update-name')
   @HttpCode(202) // 202 Accepted
   update(@Query() query) {
-    return this.tracksService.updateTrack(query.id, query.name);
+    return this.tracksService.updateTrack(+query.id, query.name);
   }
 
   @Delete('delete')
   @HttpCode(204) // 204 No Content
   delete(@Query('id') id: number) {
-    return this.tracksService.deleteTrack(id);
+    return this.tracksService.deleteTrack(+id);
   }
 
   @Get('all-old')

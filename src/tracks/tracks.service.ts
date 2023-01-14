@@ -32,7 +32,7 @@ export class TracksService {
       return 'Id should be a number';
     }
     if (id <= 0 || id > Object.keys(tracks).length) {
-      return `id ${id} is not correct`;
+      return `Id ${id} is not correct`;
     }
     if (tracks[id].hidden) {
       return `Track ${id} is hidden`;
@@ -51,12 +51,24 @@ export class TracksService {
   }
 
   updateTrack(id: number, newName: string) {
+    if (typeof id !== 'number') {
+      return 'Id should be a number';
+    }
+    if (id <= 0 || id > Object.keys(tracks).length) {
+      return `Id ${id} is not correct`;
+    }
     const track = tracks[id];
     track.name = newName;
     return track;
   }
 
   deleteTrack(id: number) {
+    if (typeof id !== 'number') {
+      return 'Id should be a number';
+    }
+    if (id <= 0 || id > Object.keys(tracks).length) {
+      return `Id ${id} is not correct`;
+    }
     const track = tracks[id];
     track.hidden = true;
   }
