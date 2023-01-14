@@ -50,10 +50,10 @@ export class TracksService {
     return tracks[id];
   }
 
-  updateTrack(trackId: number, newName: string) {
-    // const track = tracks.find(({ id }) => id === +trackId);
-    // track.name = newName;
-    // return track;
+  updateTrack(id: number, newName: string) {
+    const track = tracks[id];
+    track.name = newName;
+    return track;
   }
 
   deleteTrack(id: number) {
