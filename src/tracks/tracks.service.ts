@@ -41,9 +41,13 @@ export class TracksService {
   }
 
   createTrack(name: string) {
-    // const id = tracks.length + 1;
-    // tracks.push({ id, name });
-    // return { id, name };
+    const id = Object.keys(tracks).length + 1;
+    tracks[id] = {
+      id,
+      name,
+      hiddden: false,
+    };
+    return tracks[id];
   }
 
   updateTrack(trackId: number, newName: string) {
