@@ -34,7 +34,7 @@ export class TracksService {
     if (id <= 0 || id > Object.keys(tracks).length) {
       return `id ${id} is not correct`;
     }
-    if (tracks[id].hidden){
+    if (tracks[id].hidden) {
       return `Track ${id} is hidden`;
     }
     return tracks[id];
@@ -57,13 +57,7 @@ export class TracksService {
   }
 
   deleteTrack(id: number) {
-  //   console.log(id, typeof id);
-  //   const index = tracks.findIndex((track) => track.id === id);
-  //   console.log(index);
-  //   if (index !== -1 && !tracks[index].hidden) {
-  //     delete tracks[index];
-  //     console.log(tracks);
-  //   }
-  //   return `Specified song wasn't found`;
+    const track = tracks[id];
+    track.hidden = true;
   }
 }
