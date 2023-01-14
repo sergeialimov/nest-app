@@ -16,9 +16,10 @@ export class TracksService {
     return tracks.find((track) => track.id === +id);
   }
 
-  createTrack() {
-    const id = Date.now().toString();
-    return id;
+  createTrack(name: string) {
+    const id = tracks.length + 1;
+    tracks.push({ id, name });
+    return { id, name };
   }
 
   updateTrack() {
