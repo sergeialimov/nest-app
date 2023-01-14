@@ -4,7 +4,6 @@ import {
   Get,
   HttpCode,
   Patch,
-  Post,
   Redirect,
   Put,
   Param,
@@ -23,7 +22,7 @@ export class TracksController {
   }
 
   // path params
-  @Get('one1/:id')
+  @Get('one/:id')
   @HttpCode(200)
   getOneQuery1(@Param('id') id) {
     return this.tracksService.getOne(id);
