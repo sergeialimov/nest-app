@@ -43,8 +43,8 @@ export class TracksController {
 
   @Put('create')
   @HttpCode(201) // 201 Created
-  create() {
-    return this.tracksService.createTrack();
+  create(@Query() query) {
+    return this.tracksService.createTrack(query.name);
   }
 
   @Patch('update')
