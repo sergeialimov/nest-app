@@ -21,24 +21,10 @@ export class TracksController {
     return this.tracksService.getAll();
   }
 
-  // path params
   @Get('one/:id')
   @HttpCode(200)
-  getOneQuery1(@Param('id') id) {
+  getOneQuery(@Param('id') id) {
     return this.tracksService.getOne(+id);
-  }
-
-  // query params
-  @Get('one2')
-  @HttpCode(200)
-  getOneQuery2(@Query('id') id) {
-    return this.tracksService.getOne(+id);
-  }
-
-  @Get('one3')
-  @HttpCode(200)
-  getOneQuery3(@Query() query) {
-    return this.tracksService.getOne(+query.id);
   }
 
   @Put('create')
