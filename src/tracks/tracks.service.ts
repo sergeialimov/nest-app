@@ -1,8 +1,21 @@
-const tracks = 
-  { id: 1, name: 'Track 1', hidden: false },
-  { id: 2, name: 'Track 2', hidden: false },
-  { id: 3, name: 'Track 3', hidden: false },
-];
+const tracks = {
+  1: {
+    name: 'Track 1',
+    hidden: false,
+  },
+  2: {
+    name: 'Track 2',
+    hidden: false,
+  },
+  3: {
+    name: 'Track 3',
+    hidden: false,
+  },
+  4: {
+    name: 'Track 4',
+    hidden: true,
+  },
+};
 
 export class TracksService {
   getAll() {
